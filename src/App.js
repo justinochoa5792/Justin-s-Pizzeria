@@ -3,17 +3,21 @@ import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
+  const location = useLocation();
   return (
     <>
       <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Contact" element={<Contact />} />
-      </Routes>
+      <AnimatePresence>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Home />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Contact" element={<Contact />} />
+        </Routes>
+      </AnimatePresence>
     </>
   );
 }

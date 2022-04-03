@@ -64,7 +64,7 @@ h3 {
 }
 
 .about img {
-  height: 50vh;
+  height: 60vh;
   width: 100%;
 }
 
@@ -74,4 +74,12 @@ h3 {
   text-align: center;
   padding-top: 10px;
   width: 50%;
+}
+
+.about .text h1 {
+  padding: 20px 0;
+}
+
+.contact {
+  text-align: center;
 }

@@ -1,9 +1,15 @@
 import React from "react";
 import logo from "../images/handmade.jpg";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div className="about">
+    <motion.div
+      className="about"
+      initial={{ width: 0 }}
+      animate={{ width: "100%" }}
+      exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
+    >
       <img src={logo} alt="pizza" />
       <div className="text">
         <h1>About Us</h1>
@@ -17,7 +23,7 @@ const About = () => {
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
